@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Poppins } from "next/font/google";
 
 import { BsPlayFill, BsStar, BsStarFill } from "react-icons/bs"
 import { IoCallOutline } from "react-icons/io5"
@@ -8,15 +7,10 @@ import Container from "@/src/common/components/Container";
 import CustomButton from '@/src/common/components/CustomButton';
 import BadgeText from "@/src/common/components/BadgeText";
 
-const PoppinsFont = Poppins({
-    subsets: ["latin"],
-    weight: ["200", "300", "400", "500", "600", "700", "800", "900"]
-});
-
 const Hero = () => {
     return (
-        <Container className={`flex items-center justify-between h-[calc(100vh-100px)] ${PoppinsFont.className}`}>
-            <div className="max-w-xl flex flex-col gap-10">
+        <Container className="flex items-center justify-between p-0 h-[calc(100vh-100px)]">
+            <div className="lg:max-w-xl flex flex-col gap-10">
                 <BadgeText>
                     More than faster 🍒
                 </BadgeText>
@@ -47,15 +41,15 @@ const Hero = () => {
                         <Image src="/home/avatar.png" alt="avatar" className="-translate-x-6 rounded-full border-3 border-white" width={50} height={50} />
                     </div>
                     <div>
-                        <h5 className="font-semibold">Our Happy Customers</h5>
+                        <h5 className="text-sm md:text-base font-semibold">Our Happy Customers</h5>
                         <span className="flex gap-2">
-                            <span className="flex gap-1"><BsStarFill size={20} color="#FFC107" /> 4.5</span>
-                            <p className="text-gray-500">(12.5 reviews)</p>
+                            <span className="text-sm md:text-base flex gap-1"><BsStarFill size={20} color="#FFC107" /> 4.5</span>
+                            <p className="text-sm md:text-base text-gray-500">(12.5 reviews)</p>
                         </span>
                     </div>
                 </div>
             </div>
-            <div className="relative">
+            <div className="hidden lg:block relative">
                 <Image src="/home/hero.svg" alt="hero" width={600} height={700} />
 
                 <div className="absolute -left-20 top-3/4 bg-white shadow-sm-all  flex gap-3 w-fit h-fit items-center px-4 py-2 rounded-full">

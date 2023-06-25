@@ -3,6 +3,9 @@ import Navbar from '@/src/home/components/Navbar'
 import Hero from '@/src/home/components/sections/Hero'
 import HowToOrder from '@/src/home/components/sections/HowToOrder'
 import Menu from '@/src/home/components/sections/Menu'
+import Categories from '@/src/home/components/sections/Categories'
+import WhatCustomerSay from '@/src/home/components/sections/WhatCustomerSay'
+import Footer from '@/src/common/components/Footer'
 
 const PoppinsFont = Poppins({
   subsets: ['devanagari', 'latin-ext', 'latin'],
@@ -17,6 +20,9 @@ export default function Home() {
         <Hero />
         <HowToOrder />
         <Menu />
+        <Categories />
+        <WhatCustomerSay />
+        <Footer />
       </div>
     </div>
   )

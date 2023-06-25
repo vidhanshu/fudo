@@ -1,12 +1,13 @@
 import Container from "@/src/common/components/Container"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 import { MENU } from "../../utils/constants";
 import Image from "next/image";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useCallback, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 const Menu = () => {
+    const isDownMd = useMediaQuery({ query: "(max-width:764px)" })
     const sliderRef = useRef<any>(null);
 
     const handlePrev = useCallback(() => {
@@ -20,8 +21,8 @@ const Menu = () => {
     }, []);
 
     return (
-        <Container className="py-10">
-            <div className="flex justify-between items-center">
+        <Container>
+            <div className="flex-col gap-4  flex justify-between md:gap-0 md:flex-row md:items-center">
                 <div>
                     <p className="typo-label-section">Our Menu</p>
                     <h1 className="typo-title-section mt-2 max-w-xl">
@@ -40,7 +41,7 @@ const Menu = () => {
             <div className="mt-10">
                 <Swiper
                     spaceBetween={50}
-                    slidesPerView={3}
+                    slidesPerView={isDownMd ? 1 : 3}
                     ref={sliderRef}
                     autoplay={{ delay: 1000 }}
                     loop={true}

@@ -10,11 +10,19 @@
 
 @layer components {
   .typo-title-hero {
-    @apply text-7xl font-extrabold text-[#303030] leading-[1.2];
+    @apply text-5xl sm:text-6xl xl:text-7xl font-extrabold text-[#303030] leading-[1.2];
+  }
+
+  .typo-detail-hero {
+    @apply text-base font-medium sm:font-semibold text-[#878787];
   }
 
   .typo-title-section {
-    @apply text-5xl font-semibold text-[#303030] leading-[1.2];
+    @apply text-2xl sm:text-4xl md:text-5xl font-semibold text-[#303030] leading-[1.2];
+  }
+
+  .typo-detail-section {
+    @apply text-sm md:text-base text-[#878787];
   }
 
   .typo-label-section {
@@ -22,10 +30,6 @@
   }
 
   .typo-title-md {
-    @apply text-2xl font-semibold text-[#303030];
-  }
-
-  .typo-detail-hero {
-    @apply text-base font-semibold text-[#878787];
+    @apply text-xl md:text-2xl font-semibold text-[#303030];
   }
 }
