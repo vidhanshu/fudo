@@ -11,7 +11,7 @@ const Hero = () => {
     return (
         <Container className="flex items-center justify-between p-0 h-[calc(100vh-100px)]">
             <div className="lg:max-w-xl flex flex-col gap-10">
-                <BadgeText>
+                <BadgeText className="hidden sm:block">
                     More than faster 🍒
                 </BadgeText>
                 <h1 className="typo-title-hero">

@@ -24,6 +24,7 @@ const CustomButton: FC<CustomButtonProps> = ({ children, size = "lg", className,
                 ${className ? className : ''}
                 ${disabledClass}
             `}
+            {...props}
         >
             {children}
         </button>
