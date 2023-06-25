@@ -34,7 +34,7 @@ const Hero = () => {
                     </button>
                 </div>
 
-                <div className="flex gap-2">
+                <div className="hidden sm:flex gap-2">
                     <div className="flex">
                         <Image src="/home/avatar.png" alt="avatar" className="rounded-full border-3 border-white" width={50} height={50} />
                         <Image src="/home/avatar.png" alt="avatar" className="-translate-x-3 rounded-full border-3 border-white" width={50} height={50} />
