@@ -3,25 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .typo-title-hero {
+    @apply text-7xl font-extrabold text-[#303030] leading-[1.2];
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .typo-title-section {
+    @apply text-5xl font-semibold text-[#303030] leading-[1.2];
+  }
+
+  .typo-label-section {
+    @apply uppercase text-primary-main font-semibold;
+  }
+
+  .typo-title-md {
+    @apply text-2xl font-semibold text-[#303030];
+  }
+
+  .typo-detail-hero {
+    @apply text-base font-semibold text-[#878787];
+  }
 }
