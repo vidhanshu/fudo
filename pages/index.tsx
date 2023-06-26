@@ -6,6 +6,7 @@ import Menu from "@/src/home/components/sections/Menu";
 import Categories from "@/src/home/components/sections/Categories";
 import WhatCustomerSay from "@/src/home/components/sections/WhatCustomerSay";
 import HomeLayout from "@/src/home/components/HomeLayout";
+import Faq from "@/src/home/components/sections/Faq";
 
 const PoppinsFont = Poppins({
   subsets: ["devanagari", "latin-ext", "latin"],
@@ -19,6 +20,7 @@ export default function Home() {
       <Menu />
       <Categories />
       <WhatCustomerSay />
+      <Faq />
     </div>
   );
 }

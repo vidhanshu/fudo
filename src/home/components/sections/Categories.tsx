@@ -5,6 +5,7 @@ import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { useCallback, useRef } from "react";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
+import SectionTitle from "../../common/SectionTitle";
 
 const Categories = () => {
   const isDownlg = useMediaQuery({ query: "(max-width:900px)" });
@@ -25,12 +26,10 @@ const Categories = () => {
   return (
     <Container>
       <div className="flex flex-col justify-between gap-4 md:gap-0 md:flex-row md:items-center">
-        <div>
-          <p className="typo-label-section">Categories offered</p>
-          <h1 className="typo-title-section mt-2 max-w-xl">
-            Everything that you want.
-          </h1>
-        </div>
+        <SectionTitle
+          label="Categories offered"
+          title="Explore our categories"
+        />
         <div className="flex gap-4">
           <button onClick={handlePrev} className="bg-gray-200 p-3 rounded-full">
             <BsChevronLeft size={20} />

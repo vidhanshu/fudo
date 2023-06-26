@@ -12,7 +12,6 @@
   .typo-title-hero {
     @apply text-5xl sm:text-6xl xl:text-7xl font-extrabold text-[#303030] leading-[1.2];
   }
-
   .typo-detail-hero {
     @apply text-base font-medium sm:font-semibold text-[#878787];
   }
@@ -20,16 +19,17 @@
   .typo-title-section {
     @apply text-2xl sm:text-4xl md:text-5xl font-semibold text-[#303030] leading-[1.2];
   }
-
   .typo-detail-section {
     @apply text-sm md:text-base text-[#878787];
   }
-
   .typo-label-section {
     @apply uppercase text-primary-main font-semibold;
   }
 
   .typo-title-md {
     @apply text-xl md:text-2xl font-semibold text-[#303030];
+  }
+  .typo-title-sm {
+    @apply text-sm md:text-lg font-semibold text-[#303030];
   }
 }
