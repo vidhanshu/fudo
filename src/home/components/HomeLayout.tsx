@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import Navbar from "./Navbar";
-import Hero from "./sections/Hero";
+import Hero from "./sections/HeroSection";
+import Navbar from "@/src/common/components/Navbar";
 import Footer from "@/src/common/components/Footer";
 
 const HomeLayout: FC<{ children: React.ReactNode }> = ({ children }) => {

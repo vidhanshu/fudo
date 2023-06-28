@@ -71,7 +71,13 @@ const Hero = () => {
         </div>
       </div>
       <div className="hidden lg:block relative">
-        <Image src="/home/hero.svg" alt="hero" width={600} height={700} priority={true} />
+        <Image
+          src="/home/hero.svg"
+          alt="hero"
+          width={600}
+          height={700}
+          priority={true}
+        />
 
         <div className="absolute -left-20 top-3/4 bg-white shadow-sm-all  flex gap-3 w-fit h-fit items-center px-4 py-2 rounded-full">
           <Image

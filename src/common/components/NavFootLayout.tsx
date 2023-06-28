@@ -1,14 +1,19 @@
-import Navbar from "@/src/home/components/Navbar";
+import Navbar from "@/src/common/components/Navbar";
 import React, { FC } from "react";
 import Footer from "./Footer";
 
-const NavFootLayout: FC<{ children: React.ReactNode }> = ({ children }) => {
+const NavFootLayout: FC<{
+  children: React.ReactNode;
+  hideFooter?: boolean;
+  hideNav?: boolean;
+  className?: string;
+}> = ({ children, className = "", hideFooter = false, hideNav = false }) => {
   return (
-    <>
-      <Navbar />
+    <div className={className}>
+      {!hideNav && <Navbar />}
       {children}
-      <Footer />
-    </>
+      {!hideFooter && <Footer />}
+    </div>
   );
 };
 

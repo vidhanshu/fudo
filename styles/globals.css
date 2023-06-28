@@ -26,10 +26,23 @@
     @apply uppercase text-primary-main font-semibold;
   }
 
+  .typo-title-lg {
+    @apply text-2xl md:text-3xl font-semibold text-[#303030];
+  }
   .typo-title-md {
     @apply text-xl md:text-2xl font-semibold text-[#303030];
   }
   .typo-title-sm {
+    @apply text-lg md:text-xl font-semibold text-[#303030];
+  }
+  .typo-title-xs {
     @apply text-sm md:text-lg font-semibold text-[#303030];
+  }
+
+  .typo-detail-sm {
+    @apply text-xs md:text-sm text-[#878787];
+  }
+  .typo-detail-xs {
+    @apply text-xs text-[#878787];
   }
 }

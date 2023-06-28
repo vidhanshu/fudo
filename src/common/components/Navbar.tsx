@@ -55,22 +55,26 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <Container className="flex justify-between items-center py-4 bg-transparent">
-      <Image src="/home/logo.svg" alt="logo" width={100} height={100} />
+    <header>
+      <Container
+        as="nav"
+        className="flex justify-between items-center py-4 bg-transparent"
+      >
+        <Image src="/home/logo.svg" alt="logo" width={100} height={100} />
 
-      <ul
-        className={`
+        <ul
+          className={`
                     ${NunitoFont.className}
                     fixed p-10 w-full h-full flex flex-col backdrop-blur-3xl z-10 top-0 gap-10 transition-all duration-300 
                     ${isMenuOpen ? "left-0" : "-left-full"}
                     sm:hidden
                     md:flex md:static md:p-0 md:w-auto md:h-auto md:flex-row md:bg-transparent md:z-0 md:backdrop-none md:transition-none
                 `}
-      >
-        {options.map(({ name, path }, index) => (
-          <li
-            key={path}
-            className={`
+        >
+          {options.map(({ name, path }, index) => (
+            <li
+              key={path}
+              className={`
                             font-semibold text-[1.1rem] relative
                             ${
                               active === index
@@ -83,24 +87,25 @@ const Navbar = () => {
                                 : ""
                             }
                         `}
-          >
-            <Link href={path}>{name}</Link>
-          </li>
-        ))}
-      </ul>
+            >
+              <Link href={path}>{name}</Link>
+            </li>
+          ))}
+        </ul>
 
-      <CustomButton className="hidden sm:block" size="md">
-        Order Now
-      </CustomButton>
+        <CustomButton className="hidden sm:block" size="md">
+          Order Now
+        </CustomButton>
 
-      <button
-        onClick={() => setIsMenuOpen((p) => !p)}
-        className="fixed right-[16px] top-[20px] sm:hidden z-20"
-      >
-        <CiMenuBurger size={30} className={isMenuOpen ? "hidden" : ""} />
-        <CiMenuFries size={30} className={!isMenuOpen ? "hidden" : ""} />
-      </button>
-    </Container>
+        <button
+          onClick={() => setIsMenuOpen((p) => !p)}
+          className="fixed right-[16px] top-[20px] sm:hidden z-20"
+        >
+          <CiMenuBurger size={30} className={isMenuOpen ? "hidden" : ""} />
+          <CiMenuFries size={30} className={!isMenuOpen ? "hidden" : ""} />
+        </button>
+      </Container>
+    </header>
   );
 };
 

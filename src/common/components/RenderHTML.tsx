@@ -1,14 +1,17 @@
-import { FC } from "react"
+import { FC } from "react";
 
-const RenderHTML: FC<{ html: string, className?: string }> = ({ html, className = '' }) => {
-    return (
-        <div
-            className={className}
-            dangerouslySetInnerHTML={{
-                __html: html,
-            }}
-        ></div>
-    )
-}
+const RenderHTML: FC<{ html: string; className?: string }> = ({
+  html,
+  className = "",
+}) => {
+  return (
+    <div
+      className={className}
+      dangerouslySetInnerHTML={{
+        __html: html,
+      }}
+    ></div>
+  );
+};
 
-export default RenderHTML
+export default RenderHTML;

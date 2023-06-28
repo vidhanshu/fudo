@@ -33,6 +33,10 @@ module.exports = {
           dark: "#D93132",
         },
         secondary: "#FEC65E",
+        background: {
+          main: "#fff",
+          secondary: "#FBFBFA",
+        },
       },
       boxShadow: {
         "sm-all": "0px 0px 30px 0 rgba(0, 0, 0, 0.07)",
