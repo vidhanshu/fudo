@@ -26,6 +26,9 @@
     @apply uppercase text-primary-main font-semibold;
   }
 
+  .typo-title-xl {
+    @apply text-3xl md:text-4xl font-semibold text-[#303030];
+  }
   .typo-title-lg {
     @apply text-2xl md:text-3xl font-semibold text-[#303030];
   }
@@ -39,6 +42,12 @@
     @apply text-sm md:text-lg font-semibold text-[#303030];
   }
 
+  .typo-detail-lg {
+    @apply text-base md:text-lg text-[#878787];
+  }
+  .typo-detail-md {
+    @apply text-sm md:text-base text-[#878787];
+  }
   .typo-detail-sm {
     @apply text-xs md:text-sm text-[#878787];
   }

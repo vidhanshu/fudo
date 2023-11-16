@@ -1,4 +1,4 @@
-import { useCartContext } from "@/src/common/contexts/useCartContext";
+import { useCartContext } from "@/src/common/contexts/cart/useCartContext";
 import { BsCashCoin, BsCreditCard2Back, BsQrCodeScan } from "react-icons/bs";
 
 

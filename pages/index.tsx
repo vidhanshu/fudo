@@ -1,30 +1,38 @@
 import React from "react";
-import { Poppins } from "next/font/google";
-
-import HowToOrder from "@/src/home/components/sections/HowToOrderSection";
-import Menu from "@/src/home/components/sections/MenuSection";
-import Categories from "@/src/home/components/sections/CategoriesSection";
-import WhatCustomerSay from "@/src/home/components/sections/WhatCustomerSaySection";
+import HomePage from "@/src/home/HomePage";
 import HomeLayout from "@/src/home/components/HomeLayout";
-import Faq from "@/src/home/components/sections/FaqSection";
+import jwt from "jsonwebtoken";
 
-const PoppinsFont = Poppins({
-  subsets: ["devanagari", "latin-ext", "latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+const Page = () => {
+  return <HomePage />;
+};
 
-export default function Home() {
-  return (
-    <div className={PoppinsFont.className}>
-      <HowToOrder />
-      <Menu />
-      <Categories />
-      <WhatCustomerSay />
-      <Faq />
-    </div>
-  );
-}
-
-Home.getLayout = function (page: React.ReactElement) {
+Page.getLayout = function (page: React.ReactElement) {
   return <HomeLayout>{page}</HomeLayout>;
 };
+
+export default Page;
+
+export function getServerSideProps({ req, res }: any) {
+  try {
+    if (req.cookies.token) {
+      const decoded = jwt.verify(
+        req.cookies.token,
+        process.env.JWT_SECRET || ""
+      );
+      if (decoded) {
+        return {
+          props: {},
+        };
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+  return {
+    redirect: {
+      destination: "/signin?next=/",
+      permanent: false,
+    },
+  };
+}

@@ -1,6 +1,6 @@
 import Container from "@/src/common/components/Container";
 import Image from "next/image";
-import { useCallback, useRef } from "react";
+import { FC } from "react";
 import {
   BsChevronLeft,
   BsChevronRight,
@@ -9,19 +9,10 @@ import {
 } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CUSTOMERS } from "../../utils/constants";
+import useCustomSwiper from "@/src/common/hooks/useCustomSwiper";
 
 const WhatCustomerSay = () => {
-  const sliderRef = useRef<any>(null);
-
-  const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  }, []);
-
-  const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
+  const { handleNext, handlePrev, sliderRef } = useCustomSwiper();
 
   return (
     <Container className="flex flex-col lg:flex-row gap-4 justify-between items-center">

@@ -2,26 +2,16 @@ import Container from "@/src/common/components/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CATEGORIES } from "../../utils/constants";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { useCallback, useRef } from "react";
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import SectionTitle from "../../common/SectionTitle";
+import useCustomSwiper from '../../../common/hooks/useCustomSwiper';
 
 const Categories = () => {
   const isDownlg = useMediaQuery({ query: "(max-width:900px)" });
   const isDownMd = useMediaQuery({ query: "(max-width:764px)" });
 
-  const sliderRef = useRef<any>(null);
-
-  const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  }, []);
-
-  const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
+  const { handleNext, handlePrev, sliderRef } = useCustomSwiper();
 
   return (
     <Container>

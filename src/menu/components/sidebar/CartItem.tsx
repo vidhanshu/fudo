@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { ICartItem } from "../../type";
 import Image from "next/image";
 import { BiMinus, BiPlus } from "react-icons/bi";
-import { useCartContext } from "@/src/common/contexts/useCartContext";
+import { useCartContext } from "@/src/common/contexts/cart/useCartContext";
 
 const CartItem: FC<{
   item: ICartItem
@@ -24,7 +24,12 @@ const CartItem: FC<{
           />
           <div className="flex flex-col justify-between">
             <h4 className="typo-title-sm">{name}</h4>
-            <small className="text-sm text-gray-500">{category}</small>
+            <span className="text-sm text-gray-500 flex justify-between items-center">
+              {category} 
+              <span className="block sm:hidden text-lg font-semibold text-primary-main">
+                {quantity} x {price}
+              </span>
+            </span>
             <div className="flex gap-5 items-center">
               <div className="flex gap-3 items-center">
                 <button className="p-2 rounded-md bg-gray-200">
@@ -41,7 +46,7 @@ const CartItem: FC<{
                   })} size={20} />
                 </button>
               </div>
-              <span className="text-lg font-semibold text-primary-main">
+              <span className="hidden sm:block text-lg font-semibold text-primary-main">
                 {quantity} x {price}
               </span>
             </div>

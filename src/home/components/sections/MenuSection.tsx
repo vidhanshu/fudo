@@ -3,22 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { MENU } from "../../utils/constants";
 import Image from "next/image";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import { useCallback, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
+import useCustomSwiper from "@/src/common/hooks/useCustomSwiper";
 
 const Menu = () => {
   const isDownMd = useMediaQuery({ query: "(max-width:764px)" });
-  const sliderRef = useRef<any>(null);
-
-  const handlePrev = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slidePrev();
-  }, []);
-
-  const handleNext = useCallback(() => {
-    if (!sliderRef.current) return;
-    sliderRef.current.swiper.slideNext();
-  }, []);
+  const { handlePrev, handleNext, sliderRef } = useCustomSwiper();
 
   return (
     <Container>
